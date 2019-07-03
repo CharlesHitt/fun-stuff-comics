@@ -2,9 +2,9 @@ const express = require('express');
 // const router = express.Router();
 const router = require('express-promise-router')();
 
-const CustomersController = require('../backend/controllers/customers');
+const CustomersController = require('../controllers/customers');
 
-const { validateParam, validateBody, schemas } = require('../backend/helpers/routeHelpers')
+const { validateParam, validateBody, schemas } = require('../helpers/routeHelpers')
 
 router.route('/')
 .get(CustomersController.index)

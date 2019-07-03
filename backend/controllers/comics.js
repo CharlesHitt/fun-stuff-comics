@@ -8,14 +8,15 @@ module.exports = {
     },
 
     newComic: async (req,res,next) => {
+        console.log("inside new comic")
         const sub = await Customer.findById(req.value.body.sub)
         const newComic = req.value.body
         delete newComic.sub
         const comic = new Comic(newComic)
         comic.sub = sub
-        await comic.save()
         sub.comics.push(comic)
         await sub.save()
+        await comic.save()
         res.status(200).json(comic)
     },
 

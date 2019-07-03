@@ -3,12 +3,14 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const cors = require('cors')
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/fun_stuff_comics')
 
 const app = express();
 app.use(helmet())
+app.use(cors())
 
 //Routes
 const customers = require('./routes/customers')
