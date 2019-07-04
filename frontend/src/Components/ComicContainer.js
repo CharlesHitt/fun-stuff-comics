@@ -15,7 +15,8 @@ class ComicContainer extends Component {
             displayedComics: []
         }
     }
-    componentDidMount(){
+
+    getFetch = () => {
         fetch(ComicAPI)
         .then(res=>res.json())
         .then(data=>
@@ -31,6 +32,10 @@ class ComicContainer extends Component {
                 allCustomers: data,
                 alsoLoading: false
             }))
+    }
+    
+    componentDidMount(){
+        this.getFetch()
     }
 
     filter = (e) =>{
@@ -54,8 +59,8 @@ class ComicContainer extends Component {
                     {this.state.alsoLoading === true ? "still loading...":
                     <div>
                         Comic Container
-                        <Header allCustomers={this.state.allCustomers} filter={this.filter}/>
-                        <ComicDisplay displayedComics={this.state.displayedComics}/>
+                        <Header allCustomers={this.state.allCustomers} filter={this.filter} getFetch={this.getFetch}/>
+                        <ComicDisplay displayedComics={this.state.displayedComics} allCustomers={this.state.allCustomers} getFetch={this.getFetch}/>
                     </div>
                     }
                 </div>

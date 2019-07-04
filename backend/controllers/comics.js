@@ -27,7 +27,7 @@ module.exports = {
 
     replaceComic: async (req,res,next)=>{
         const { comicId } = req.value.params
-        const newComic = req.value.params
+        const newComic = req.value.body
         const result = await Comic.findByIdAndUpdate(comicId, newComic)
         res.status(200).json({ success: true })
         
@@ -35,7 +35,7 @@ module.exports = {
     
     updateComic: async (req,res,next)=>{
         const { comicId } = req.value.params
-        const newComic = req.value.params
+        const newComic = req.value.body
         const result = await Comic.findByIdAndUpdate(comicId, newComic)
         res.status(200).json({ success: true })
     },

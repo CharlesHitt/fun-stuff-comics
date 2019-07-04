@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import ComicOption from './ComicOption'
 
 class AddComic extends Component{
+    
     handleSubmit = (e) =>{
-        debugger
         e.preventDefault()
         let newComic = {
             title: e.target[0].value, 
@@ -30,20 +30,25 @@ class AddComic extends Component{
         },
         body: JSON.stringify(newComic)
         })
+        .then(
+            document.getElementById('comicform').reset()
+        ).then(
+            this.props.getFetch
+        )
 
     }
     render(){
         return(
             <div>
                 Add Comic
-                <form onSubmit={e=>this.handleSubmit(e)}>
+                <form onSubmit={e=>this.handleSubmit(e)} id="comicform">
                     <label>
                         Title:
                         <input type="text" name="title"/><br></br>
                         Issue:
                         <input type="text" name="issue"/><br></br>
-                        Main Character:
-                        <input type="text" name="mainCharacter"/><br></br>
+                        Main Characters:
+                        <input type="text" name="mainCharacters"/><br></br>
                         Publisher:
                         <input type="text" name="publisher"/><br></br>
                         Writers:

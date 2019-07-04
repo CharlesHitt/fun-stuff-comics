@@ -46,12 +46,12 @@ class Header extends Component {
                     <button onClick={this.addSubscriber}>Add Subscriber</button>
                     {this.state.addComic === false ? null : 
                     <div>
-                        <AddComic allCustomers={this.props.allCustomers}/>
+                        <AddComic allCustomers={this.props.allCustomers} getFetch={this.props.getFetch}/>
                     </div>
                     }
                     {this.state.addSubscriber === false ? null : 
                     <div>
-                        <AddSubscriber/>
+                        <AddSubscriber getFetch={this.props.getFetch}/>
                     </div>
                     }
             </div>

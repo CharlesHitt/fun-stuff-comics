@@ -6,7 +6,7 @@ class ComicDisplay extends Component{
         return(
             <div>
                 Comic Card
-                {this.props.displayedComics.map(comic=><ComicCard key={comic._id} comic={comic}/>)}
+                {this.props.displayedComics.map(comic=><ComicCard key={comic._id} comic={comic} allCustomers={this.props.allCustomers} getFetch={this.props.getFetch}/>)}
             </div>
         )
     }
