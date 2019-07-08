@@ -65,6 +65,13 @@ class ComicCard extends Component{
     deleteComic = (e) =>{
         e.preventDefault()
         console.log("soon this will delete the comic... GASP!")
+        let key = this.props.comic._id
+        fetch(`http://localhost:3000/comics/${key}`,{
+            method: `DELETE`
+        })
+        .then(
+            this.props.getFetch
+        )
     }
     findCustomer = () => {
         let result = this.props.allCustomers.find(customer=>customer._id===this.props.comic.sub)
