@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ComicContainer from './ComicContainer';
 import LogIn from './LogIn';
 import './app.css'
-import { Navbar, Nav, Button, Container, Row, Col } from 'react-bootstrap'
+import { Navbar, Nav, Button } from 'react-bootstrap'
 
 
 
@@ -38,10 +38,7 @@ class App extends Component {
   render(){
     return(
       <div>
-        <div >
-          <Container >
-            <Row>
-              <Col className="upper-container">
+        <div className="upper-container">
               <Navbar >
            <Navbar.Brand>Fun Stuff Comics</Navbar.Brand>
           {this.state.loggedIn === true?
@@ -50,15 +47,8 @@ class App extends Component {
         </Nav>
         : null }
         </Navbar>
-              </Col>
-            </Row>
-          </Container>
-          
         </div>
-        <div >
-          <Container>
-            <Row>
-              <Col className="lower-container">
+        <div className="lower-container">
               {this.state.loggedIn === true ?
           <ComicContainer /> 
             : null 
@@ -67,10 +57,6 @@ class App extends Component {
             <LogIn pants={this.pants}/> 
             : null
             }
-              </Col>
-            </Row>
-          </Container>
-          
         </div>
         </div>
       

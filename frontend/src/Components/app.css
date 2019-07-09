@@ -3,9 +3,15 @@ body{
 }
 
 .upper-container{
-    background-color: #9CA3DB;
+    background-color: #ff69b4;
+    border-style: solid;
+    border-radius: 5px;
 }
 
 .lower-container{
-    background-color: #677db7
+    background-color: #666666;
+    /* border-style: solid; */
+    border-radius: 5px;
+    margin: 20px;
 }
+
