@@ -13,31 +13,27 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: true
-    }
-  }
+    }//this.state
+  }//constructor
 
   pants = (e) => {
-    debugger
     e.preventDefault()
     if (e.target[0].value === "HotPink" && e.target[1].value === "ff69b4"){
       this.setState({
         loggedIn: true
-      })
-    }
+      })//this.state
+    }//if
     else {
       document.getElementById('loginform').reset()
-
-    }
-  }
+    }//else
+  }//pants
 
   logOut = (e) => {
     e.preventDefault()
     this.setState({
       loggedIn: false
-    })
-  }
-
-
+    })//this.setState
+  }//logOut
 
   render(){
     return(
@@ -84,6 +80,4 @@ class App extends Component {
 
 export default App;
 
-
-//Conditional rendering for quick front end authentication
 

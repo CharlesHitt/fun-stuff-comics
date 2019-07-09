@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {} from 'react-bootstrap'
 
 class ComicCard extends Component{
     constructor(props){
