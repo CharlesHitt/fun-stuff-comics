@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ComicContainer from './ComicContainer';
 import LogIn from './LogIn';
+import './app.css'
+import { Navbar, Nav, Button, Container, Row, Col } from 'react-bootstrap'
+
 
 
 
@@ -14,6 +17,7 @@ class App extends Component {
   }
 
   pants = (e) => {
+    debugger
     e.preventDefault()
     if (e.target[0].value === "HotPink" && e.target[1].value === "ff69b4"){
       this.setState({
@@ -37,23 +41,41 @@ class App extends Component {
 
   render(){
     return(
-     
-        <div className="container">
-          <h2>Fun Stuff Comics</h2>
-
+      <div>
+        <div >
+          <Container >
+            <Row>
+              <Col className="upper-container">
+              <Navbar >
+           <Navbar.Brand>Fun Stuff Comics</Navbar.Brand>
           {this.state.loggedIn === true?
-          <button onClick={e=>this.logOut(e)}>Log Out</button>
+         <Nav className="ml-auto">
+          <Button   variant="primary" onClick={e=>this.logOut(e)}>Log Out</Button>
+        </Nav>
         : null }
-
-          {this.state.loggedIn === true ?
-          <ComicContainer /> :
-            null 
+        </Navbar>
+              </Col>
+            </Row>
+          </Container>
+          
+        </div>
+        <div >
+          <Container>
+            <Row>
+              <Col className="lower-container">
+              {this.state.loggedIn === true ?
+          <ComicContainer /> 
+            : null 
             }
-
             {this.state.loggedIn === false ? 
-            <LogIn pants={this.pants}/> :
-            null
+            <LogIn pants={this.pants}/> 
+            : null
             }
+              </Col>
+            </Row>
+          </Container>
+          
+        </div>
         </div>
       
     )

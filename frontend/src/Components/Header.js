@@ -3,6 +3,8 @@ import Option from "./Option"
 import AddComic from "./AddComic"
 import AddSubscriber from "./AddSubscriber"
 import ViewSub from "./ViewSub"
+import { Navbar, Button, Container, Row, Col } from 'react-bootstrap'
+import './app.css'
 
 class Header extends Component {
     constructor(props){
@@ -48,16 +50,23 @@ class Header extends Component {
     
     render(){
         return(
-            <div>
-                Header
-                    <strong>Filter:</strong>
-                    <select onChange={e=>this.props.filter(e)}>
+            <div >
+                <Container>
+                    <Row>
+                        <Col >
+                <Navbar >
+                    <Navbar.Brand>Filter:</Navbar.Brand>
+                    <select className="mr-3" onChange={e=>this.props.filter(e)}>
                     <option value="all"> All Subscribers </option>
                     {this.props.allCustomers.map((customer)=>{return <Option key={customer._id} customer={customer}/>})}
                     </select>
-                    <button onClick={this.viewSub}>View Subscribers</button>
-                    <button onClick={this.addComic}>Add Comic</button>
-                    <button onClick={this.addSubscriber}>Add Subscriber</button>
+                    <Button className="mr-3" variant="primary" onClick={this.viewSub}>View Subscribers</Button>
+                    <Button className="mr-3" variant="primary" onClick={this.addComic}>Add Comic</Button>
+                    <Button className="mr-3" variant="primary" onClick={this.addSubscriber}>Add Subscriber</Button>
+                    </Navbar>
+                    </Col>
+                    </Row>
+                    </Container>
                     {this.state.viewSub === false ? null : 
                     <div>
                         <ViewSub allCustomers={this.props.allCustomers} getFetch={this.props.getFetch}/>

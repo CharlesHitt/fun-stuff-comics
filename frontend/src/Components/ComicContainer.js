@@ -58,7 +58,6 @@ class ComicContainer extends Component {
                 <div>
                     {this.state.alsoLoading === true ? "still loading...":
                     <div>
-                        Comic Container
                         <Header allCustomers={this.state.allCustomers} filter={this.filter} getFetch={this.getFetch}/>
                         <ComicDisplay displayedComics={this.state.displayedComics} allCustomers={this.state.allCustomers} getFetch={this.getFetch}/>
                     </div>
