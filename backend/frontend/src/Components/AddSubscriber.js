@@ -33,15 +33,15 @@ class AddSubscriber extends Component{
                 <Form onSubmit={e=>this.handleSubmit(e)} id="subform">
                     <Row>
                         <Col>
-                        <Form.Label class="text-white">First Name:</Form.Label>
+                        <Form.Label>First Name:</Form.Label>
                         <Form.Control type="text" name="firstName" />
-                        <Form.Label class="text-white">Phone Number:</Form.Label>    
+                        <Form.Label>Phone Number:</Form.Label>    
                         <Form.Control type="text" name="phoneNumber"/>
                         </Col>
                         <Col>
-                        <Form.Label class="text-white">Last Name:</Form.Label>     
+                        <Form.Label>Last Name:</Form.Label>     
                         <Form.Control type="text" name="lastName"/>
-                        <Form.Label class="text-white">Email:</Form.Label>    
+                        <Form.Label>Email:</Form.Label>    
                         <Form.Control type="text" name="email"/>
                         </Col>
                     </Row>
@@ -49,7 +49,6 @@ class AddSubscriber extends Component{
                     <Button variant="success" type="submit">Submit</Button>
                     </Form>
                 </Container>
-                <br></br>
             </div>
         ) //render
     } //return

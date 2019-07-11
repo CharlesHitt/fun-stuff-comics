@@ -55,7 +55,7 @@ class Header extends Component {
                     <Row>
                         <Col >
                 <Navbar >
-                    <Navbar.Brand className="text-white">Filter:</Navbar.Brand>
+                    <Navbar.Brand >Filter:</Navbar.Brand>
                     <select className="mr-3" onChange={e=>this.props.filter(e)}>
                     <option value="all"> All Subscribers </option>
                     {this.props.allCustomers.map((customer)=>{return <Option key={customer._id} customer={customer}/>})}

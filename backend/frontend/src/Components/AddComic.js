@@ -45,46 +45,45 @@ class AddComic extends Component{
                 <Container>
                     <Row>
                         <Col>
-                        <Form.Label class="text-white">Title:</Form.Label>    
-                        <Form.Control type="text" name="title" placeholder="Title"/>
-                        <Form.Label class="text-white">Publisher:</Form.Label>    
-                        <Form.Control type="text" name="publisher" placeholder="Publisher"/>
-                        <Form.Label class="text-white">Release Date (YYMMDD):</Form.Label>    
-                        <Form.Control type="text" name="releaseDate" placeholder="Release Date"/>
-                        <Form.Label class="text-white">Genre:</Form.Label>    
-                        <Form.Control type="text" name="genre" placeholder="Genre"/>
-                        <Form.Label class="text-white">Image URL:</Form.Label>    
-                        <Form.Control type="text" name="image_url" placeholder="Image URL"/>
+                        <Form.Label>Title:</Form.Label>    
+                        <Form.Control type="text" name="title"/>
+                        <Form.Label>Publisher:</Form.Label>    
+                        <Form.Control type="text" name="publisher"/>
+                        <Form.Label>Release Date (YYMMDD):</Form.Label>    
+                        <Form.Control type="text" name="releaseDate"/>
+                        <Form.Label>Genre:</Form.Label>    
+                        <Form.Control type="text" name="genre"/>
+                        <Form.Label>Image URL:</Form.Label>    
+                        <Form.Control type="text" name="image_url"/>
                         </Col>
                         <Col>
-                        <Form.Label class="text-white">Issue/Volume:</Form.Label>
-                        <Form.Control type="text" name="issue" placeholder="Issue/Volume"/>
-                        <Form.Label class="text-white">Writers:</Form.Label>    
-                        <Form.Control type="text" name="writers" placeholder="Writers"/>
-                        <Form.Label class="text-white">Number of Pages:</Form.Label>    
-                        <Form.Control type="text" name="numberOfPages" placeholder="Number of Pages"/>
-                        <Form.Label class="text-white">Description:</Form.Label>    
-                        <Form.Control as="textarea" row="2" placeholder="Description"/>
+                        <Form.Label>Issue:</Form.Label>
+                        <Form.Control type="text" name="issue"/>
+                        <Form.Label>Writers:</Form.Label>    
+                        <Form.Control type="text" name="writers"/>
+                        <Form.Label>Number of Pages:</Form.Label>    
+                        <Form.Control type="text" name="numberOfPages"/>
+                        <Form.Label>Description:</Form.Label>    
+                        <Form.Control as="textarea" row="2"/>
                         </Col>
                         <Col>
-                        <Form.Label class="text-white">Main Characters:</Form.Label>
-                        <Form.Control type="text" name="mainCharacters" placeholder="Main Characters"/>
-                        <Form.Label class="text-white">Artists:</Form.Label>    
-                        <Form.Control type="text" name="artists" placeholder="Artists"/>
-                        <Form.Label class="text-white">Maturity Level:</Form.Label>
-                        <Form.Control type="text" name="maturityLevel" placeholder="Maturity Level"/>
-                        <Form.Label class="text-white">Price:</Form.Label>    
-                        <Form.Control type="text" name="price" placeholder="price"/><br></br>
-                        <p class="text-white">Subscriber:</p>
+                        <Form.Label>Main Characters:</Form.Label>
+                        <Form.Control type="text" name="mainCharacters"/>
+                        <Form.Label>Artists:</Form.Label>    
+                        <Form.Control type="text" name="artists"/>
+                        <Form.Label>Maturity Level:</Form.Label>
+                        <Form.Control type="text" name="maturityLevel"/>
+                        <Form.Label>Price:</Form.Label>    
+                        <Form.Control type="text" name="price"/><br></br>
+                        Subscriber:
                         <select>
                         {this.props.allCustomers.map(customer=><ComicOption key={customer._id} customer={customer}/>)}
                         </select>
-                        <br></br>
-                        <br/>
-                        <Button variant="success" type="submit">Submit</Button>
                         </Col>
                     </Row>
                 </Container>
+                        <br/>
+                        <Button variant="success" type="submit">Submit</Button>
                         </Form.Group>
                 </Form>
             </div>
