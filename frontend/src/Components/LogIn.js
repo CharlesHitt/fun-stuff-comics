@@ -9,10 +9,11 @@ class LogIn extends Component {
                     <Row >
                         <Col sm={8}>
                             <Form onSubmit={e=>this.props.pants(e)} id="loginform">
-                                <Form.Label>Username:</Form.Label>
+                                <Form.Label class="text-white">Username:</Form.Label>
                                     <Form.Control type="text" placeholder="Enter username" />
-                                <Form.Label>Password:</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter password"/>
+                                    <br></br>
+                                <Form.Label class="text-white">Password:</Form.Label>
+                                    <Form.Control type="password" placeholder="Enter password"/>
                                 <br></br>
                                 <Button variant="success" type="submit"> Submit </Button>
                             </Form>

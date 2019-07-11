@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Form, Button, Card } from 'react-bootstrap'
 
+
 class ComicCard extends Component{
     constructor(props){
     super(props)
