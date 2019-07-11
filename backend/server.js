@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const cors = require('cors')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://charles:Geyer1015@cluster0-gainp.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb://localhost/fun_stuff_comics')
 
 const app = express();
 app.use(helmet())
@@ -25,14 +25,6 @@ app.use(bodyParser.json());
 // Routes
 app.use('/customers', customers)
 app.use('/comics', comics);
-//serve static assets in production
-if(process.env.NODE_ENV === 'production'){
-    //set static folder
-    app.use(express.static('client/build'))
-    app.get('*', (req,res)=>{
-        res.sendFile(path.resolve(_dirname,'client','build','index.html'))
-    })
- }
 
 // Catch 404 errors and forward them to error handler
 app.use((req,res,next)=>{

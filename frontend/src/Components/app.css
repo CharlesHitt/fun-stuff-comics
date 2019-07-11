@@ -1,0 +1,16 @@
+body{
+    background-color: #666666
+}
+
+.upper-container{
+    background-color: #ff69b4;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.lower-container{
+    background-color: #666666;
+    border-radius: 5px;
+    margin: 20px;
+}
+
